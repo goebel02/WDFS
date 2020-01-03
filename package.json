@@ -1,0 +1,16 @@
+{
+  "name": "wdfs",
+  "version": "1.0.0",
+  "description": "Web Dev From Scratch Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^18.4.0",
+    "@hapi/joi": "^16.1.8"
+  }
+}
