@@ -9,10 +9,9 @@ const HapiSwagger = require('hapi-swagger');
 
 
 const init = async () => {
-
     const server = Hapi.server({
         port: process.env.PORT || 3000,
-        host: process.env.PORT ? process.env.PORT : '0.0.0.0'
+        host: process.env.PORT ? '0.0.0.0' : 'localhost'
     });
 
     const swaggerOptions = {
