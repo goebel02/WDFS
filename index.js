@@ -16,6 +16,7 @@ const init = async () => {
     });
 
     const swaggerOptions = {
+        documentationPath: '/',
         info: {
             title: 'Books API Documentation',
             version: '0.0.1',
