@@ -5,13 +5,13 @@ const Routes = require('./Routes');
 const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
 const HapiSwagger = require('hapi-swagger');
-//const Mongoose = require('Mongoose');
+const Mongoose = require('Mongoose');
 
 
 const init = async () => {
     const server = Hapi.server({
-        port: process.env.PORT || 3000,
-        host: process.env.PORT ? '0.0.0.0' : 'localhost'
+        port: process.env.PORT,
+        host: process.env.HOST
     });
 
     const swaggerOptions = {
@@ -31,7 +31,7 @@ const init = async () => {
        }
    ]);
 
-    //Mongoose.connect("mongodb+srv://Admin:<password>@cluster0-apuvw.mongodb.net/test?retryWrites=true&w=majority");
+    Mongoose.connect(`${process.env.DB_CONN_STRING}`);
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
