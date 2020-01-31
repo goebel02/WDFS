@@ -12,7 +12,7 @@ const init = async () => {
 
     const server = Hapi.server({
         port: process.env.PORT || 3000,
-        host: '0.0.0.0'
+        host: process.env.PORT ? process.env.PORT : '0.0.0.0'
     });
 
     const swaggerOptions = {
