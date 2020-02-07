@@ -1,7 +1,10 @@
 const Service = require('./Service')
 
 module.exports = {
-  getItems() {
-    return Service.getItems()
+  async getItems() {
+    return await Service.getItems()
+  },
+  async createItem(request) {  
+    return await Service.createItem(request.payload.itemName)
   }
 }

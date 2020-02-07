@@ -5,7 +5,7 @@ const Routes = require('./Routes');
 const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
 const HapiSwagger = require('hapi-swagger');
-const Mongoose = require('Mongoose');
+const Mongoose = require('mongoose');
 
 
 const init = async () => {
