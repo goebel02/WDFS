@@ -31,7 +31,7 @@ const init = async () => {
        }
    ]);
 
-    Mongoose.connect(`${process.env.DB_CONN_STRING}`);
+    //Mongoose.connect(`${process.env.DB_CONN_STRING}`);
 
     await server.start();
     console.log('Server running on %s', server.info.uri);

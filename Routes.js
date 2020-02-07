@@ -20,11 +20,11 @@ module.exports = [
           notes: 'creates a new item',
           tags: ['api'],
           handler: Controller.createItem,
-          validate: {
-            payload: {
-              itemName: Joi.string().required()
-            }
-          }
+          // validate: {
+          //   payload: {
+          //     itemName: Joi.string().required()
+          //   }
+          // }
     }
   }
 ]
