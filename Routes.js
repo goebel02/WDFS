@@ -1,5 +1,5 @@
 const Controller = require('./Controller')
-const Joi = require('joi')
+const Joi = require('@hapi/joi')
 
 module.exports = [
   {
@@ -16,15 +16,15 @@ module.exports = [
     method: 'POST',
     path: '/items',
     config: {
-        	description: 'Create a new item',
-          notes: 'creates a new item',
-          tags: ['api'],
-          handler: Controller.createItem,
-          // validate: {
-          //   payload: {
-          //     itemName: Joi.string().required()
-          //   }
-          // }
+    	description: 'Create a new item',
+      notes: 'creates a new item',
+      tags: ['api'],
+      handler: Controller.createItem,
+      validate: {
+        payload: Joi.object({
+          itemName: Joi.string().required()
+        })
+      }
     }
   }
 ]

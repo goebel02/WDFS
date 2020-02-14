@@ -1,22 +1,19 @@
-const Mongoose = require('mongoose')
-
-const ItemModel = Mongoose.model("WDFS.items", {
-    itemName: String,
-})
+const Items = require('./Items')
 
 module.exports = {
   async getItems() {
-    let items = await ItemModel.find().exec()
-    console.log(items)
+    let items = await Items.find()
     return items
   },
   async createItem(itemName) {
     try {
-            var item = new ItemModel(request.payload);
-            var result = await item.save();
-            return result;
+      const item = new Items({
+        itemName: itemName
+      });
+        var result = await item.save();
+        return result;
         } catch (error) {
-            return error;
+          return error;
         }
   }
 }

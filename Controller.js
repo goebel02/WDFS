@@ -4,7 +4,8 @@ module.exports = {
   async getItems() {
     return await Service.getItems()
   },
-  async createItem(request) {  
+  async createItem(request) {
+    console.log(request)
     return await Service.createItem(request.payload.itemName)
   }
 }

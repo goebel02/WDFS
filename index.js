@@ -5,7 +5,7 @@ const Routes = require('./Routes');
 const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
 const HapiSwagger = require('hapi-swagger');
-const Mongoose = require('mongoose');
+const db = require('./database').db;
 
 
 const init = async () => {
@@ -30,8 +30,6 @@ const init = async () => {
            options: swaggerOptions
        }
    ]);
-
-    //Mongoose.connect(`${process.env.DB_CONN_STRING}`);
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
